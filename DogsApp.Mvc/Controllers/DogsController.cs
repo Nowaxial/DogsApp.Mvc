@@ -38,7 +38,7 @@ public class DogsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    [HttpPost("delete/{id}")]
+    [HttpPost("{id}")]
     public IActionResult Delete(int id)
     {
         dogService.DeleteDog(id);
