@@ -1,18 +1,14 @@
-namespace DogsApp.Mvc
+namespace DogsApp.Mvc;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
+        var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddControllersWithViews();
+        var app = builder.Build();
+        app.MapControllers();
 
-            app.MapGet("/", () => "Hello World!");
-            //hello grupp 2
-            //hello again grupp 2
-            //hello again grupp 2!
-
-            app.Run();
-        }
+        app.Run();
     }
 }
