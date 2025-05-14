@@ -7,6 +7,10 @@ namespace DogsApp.Mvc.Controllers;
 public class DogsController : Controller
 {
     static DogService dogService = new DogService();
+    public DogsController()
+    {
+
+    }
 
     [HttpGet("")]
     public IActionResult Index()
@@ -15,17 +19,13 @@ public class DogsController : Controller
         return View(dogs);
     }
 
-    [HttpGet("/create")]
+    [HttpGet("create")]
     public IActionResult Create() => View();
 
-    [HttpPost("/create")]
+    [HttpPost("create")]
     public IActionResult Create(Dog dog)
     {
-        if (ModelState.IsValid)
-        {
-            dogService.AddDog(dog);
-            return RedirectToAction(nameof(Index));
-        }
-        return View(dog);
+        dogService.AddDog(dog);
+        return RedirectToAction(nameof(Index));
     }
 }
