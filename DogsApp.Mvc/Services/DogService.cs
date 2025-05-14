@@ -1,4 +1,5 @@
 ﻿using DogsApp.Mvc.Models;
+
 namespace DogsApp.Mvc.Services;
 
 public class DogService
@@ -18,5 +19,13 @@ public class DogService
     {
         dog.Id = dogs.Max(d => d.Id) + 1;
         dogs.Add(dog);
+    }
+
+    internal void UppdateDog(Dog uppdatedDog)
+    {
+        
+        Dog dog = GetDogById(uppdatedDog.Id);
+        dog.Name = uppdatedDog.Name;
+        dog.Age = uppdatedDog.Age;
     }
 }

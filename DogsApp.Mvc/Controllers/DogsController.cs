@@ -28,4 +28,13 @@ public class DogsController : Controller
         dogService.AddDog(dog);
         return RedirectToAction(nameof(Index));
     }
+    [HttpGet("edit/{id}")]
+    public IActionResult Edit(int id) => View(dogService.GetDogById(id));
+
+    [HttpPost("edit/{id}")]
+    public IActionResult Edit(Dog dog)
+    {
+        dogService.UppdateDog(dog);
+        return RedirectToAction(nameof(Index));
+    }
 }

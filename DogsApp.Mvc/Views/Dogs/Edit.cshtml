@@ -1,0 +1,17 @@
+﻿@using DogsApp.Mvc.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Dog</title>
+</head>
+<body>
+    <h1>Edit @Model.Name</h1>
+    <form action="/create" method="post">
+        <label for="Name">@Model.Name</label>
+        <input type="text" name="Name" />
+        <label for="Age">@Model.Age</label>
+        <input type="number" name="Age" />
+        <input type="submit" value="Uppdate Dog" />
+    </form>
+</body>
+</html>
