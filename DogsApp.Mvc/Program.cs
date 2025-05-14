@@ -8,6 +8,7 @@ namespace DogsApp.Mvc
             var app = builder.Build();
 
             app.MapGet("/", () => "Hello World!");
+            //hello grupp 2
 
             app.Run();
         }
