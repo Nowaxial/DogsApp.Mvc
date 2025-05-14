@@ -28,4 +28,8 @@ public class DogService
         dog.Name = uppdatedDog.Name;
         dog.Age = uppdatedDog.Age;
     }
+
+    public void DeleteDog (int id) => dogs.Remove(GetDogById(id));
+ 
+    
 }

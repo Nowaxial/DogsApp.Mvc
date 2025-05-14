@@ -9,7 +9,7 @@
     <ul>
         @foreach (var dog in Model)
         {
-            <li>@dog.Name</li>
+            <li>@dog.Name <button action="delete/@dog.Id" type = "submit"> Delete</button><button action="edit/@dog.Id" type="submit">Edit</button></li>
         }
     </ul>
 
